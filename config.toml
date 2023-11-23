@@ -1,0 +1,75 @@
+[site]
+title = "MistralMail - Mail Server Made Simple"
+url = "https://mistralmail.be"
+github = "https://github.com/mistralmail/mistralmail"
+
+[hero]
+title = "MistralMail"
+description = "MistralMail is a simple mail server.<br>It makes hosting your own SMTP and IMAP server plug & play."
+button_primary = "Get started"
+button_secondary = 'Learn more <span aria-hidden="true">→'
+
+[information]
+label = "KISS"
+title = "Easy to deploy and configure"
+description = "MistralMail will be a production-ready, and easy to setup mail server. It consists of an SMTP server (both MSA and MTA) and an IMAP server all bundled in one executable (or just in one Docker image) with auto-generated TLS certificates."
+
+[[features]]
+title = "Automated certificate generation"
+icon = "lock"
+description = "TLS certificates are automatically generated using Let's Encrypt to make MistralMail secure out the box."
+
+[[features]]
+title = "SQL database for email storage"
+icon = "database"
+description = "All mailboxes and other user data are safely stored in a SQL database."
+
+[[features]]
+title = "Single binary"
+icon = "cube"
+description = "MistralMail consists of a single Go binary containing everything you need (IMAP, SMTP, API, metrics, ...)."
+
+[[features]]
+title = "Cloud Native"
+icon = "cloud"
+description = "MistralMail was built with the cloud in mind. Just bring your env variables and your database and deploy everything in a matter of seconds."
+
+[[features]]
+title = "Simple configuration"
+icon = "file"
+description = "Configuration should be as simple as possible. Copy the sample <code>.env</code> file and start tweaking your configuration."
+
+[[features]]
+title = "Web interface"
+icon = "laptop"
+description = "A (rudimentary) web interface is included. So no need to SSH into your servder to add a user."
+
+
+[getting_started]
+label = "Let's go!"
+title = "Getting started with MistralMail"
+
+description = """
+First you need to copy <a href="https://github.com/mistralmail/mistralmail/blob/master/.env.sample" target="_blank"><code>.env.sample</code></a> to <code>.env</code> and configure all the needed environment variables.
+
+Make sure that ports 80 and 443 are opened for the automatic TLS certificate generation via Let's Encrypt.
+<br><br>
+Then it's just one docker command:
+"""
+
+code_snippet = '''
+docker run \ 
+    -p 25:25 \
+    -p 587:587 \
+    -p 143:143 \
+    -p 80:80 \
+    -p 443:443 \
+    -p 8080:8080 \
+    -v ./certificates:/mistralmail/certificates \
+    denbeke/mistralmail
+'''
+
+
+[copyright]
+name = "MistralMail"
+year = "2023"
